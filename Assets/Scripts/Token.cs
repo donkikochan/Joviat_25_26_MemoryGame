@@ -15,4 +15,9 @@ public class Token : MonoBehaviour
     {
         
     }
+    
+    void OnMouseDown()
+    {
+        Debug.Log("Has hecho clic en " + gameObject.name);
+    }
 }
