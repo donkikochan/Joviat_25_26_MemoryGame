@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Token : MonoBehaviour
 {
+    private GameManager gameManager;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject o = GameObject.FindGameObjectWithTag("GameManager");
+        gameManager = o.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -18,6 +21,21 @@ public class Token : MonoBehaviour
     
     void OnMouseDown()
     {
-        Debug.Log("Has hecho clic en " + gameObject.name);
+        gameManager.TokenPressed(gameObject.name);
+    }
+
+    public void ShowToken()
+    {
+        transform.Rotate(Vector3.right, 180);
+    }
+    
+    public void HideToken()
+    {
+        transform.Rotate(Vector3.right, -180);
+    }
+    
+    public void MatchToken()
+    {
+        Destroy(gameObject);
     }
 }
