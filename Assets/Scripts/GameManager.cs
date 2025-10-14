@@ -38,23 +38,35 @@ public class GameManager : MonoBehaviour
 
     public void TokenPressed(string name)
     {
-        if (numTokensOpened == 0)
+        if (numTokensOpened < 2)
         {
-            token1Name = name;
-            //dir-li al token que es mostri
+            if (numTokensOpened == 0)
+            {
+                token1Name = name;
+                //dir-li al token que es mostri
+            }
+            else if (numTokensOpened == 1)
+            {
+                if (token1Name == name)
+                {
+                    return;
+                }
+                token2Name = name;
+                
+            }
             
             int i, j; ////a partir del nom obtenim els valors de i,j
+            string[] parts = name.Split('_');
+            i = int.Parse(parts[1]);
+            j = int.Parse(parts[2]);
             tokens[i,j].GetComponent<Token>().ShowToken();
             
             numTokensOpened++;
+            Debug.Log("Tokens opened: " + numTokensOpened);
+            
+            
         }
-        else if (numTokensOpened == 1)
-        {
-            token2Name = name;
-            //dir-li al token que es mostri
-            numTokensOpened++;
-            //Cridar un timer a x segons per fer check o match
-        }
+        
 
        
         
