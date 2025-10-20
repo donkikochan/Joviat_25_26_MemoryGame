@@ -69,9 +69,20 @@ public class GameManager : MonoBehaviour
         
 
         //si hem obert dos tokens aleshores posar timer en marxa:
-        
+        Invoke("CheckTokens", 2.0f);
        
         
+    }
+
+    public void CheckTokens()
+    {
+        
+    }
+   
+    public void Update()
+    {
+       
+       
     }
     
     
