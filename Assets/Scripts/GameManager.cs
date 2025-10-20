@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,8 +39,10 @@ public class GameManager : MonoBehaviour
 
     public void TokenPressed(string name)
     {
+        
         if (numTokensOpened < 2)
         {
+       
             if (numTokensOpened == 0)
             {
                 token1Name = name;
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
         {
             //si hem obert dos tokens aleshores posar timer en marxa:
             Invoke("CheckTokens", 2.0f);
+            numTokensOpened = 3;
         }
         
        
@@ -85,15 +89,23 @@ public class GameManager : MonoBehaviour
 
     public void CheckTokens()
     {
-        
-        
-        //cridar a la funció MatchToken del token anomenat:
-        // - token2Name
-        // - token1Name
         Token t1 = GetTokenByName(token1Name);
-        t1.MatchToken();
         Token t2 = GetTokenByName(token2Name);
-        t2.MatchToken();
+
+        Debug.Log(t1.mr.material.name);
+        Debug.Log(t2.mr.material.name);
+        if (t1.mr.material.name == t2.mr.material.name)
+        {
+            t1.MatchToken();
+            t2.MatchToken();
+        }
+        else
+        {
+            t1.HideToken();
+            t2.HideToken();
+        }
+        
+      
 
 
         numTokensOpened = 0;

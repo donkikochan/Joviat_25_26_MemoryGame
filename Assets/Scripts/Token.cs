@@ -5,7 +5,7 @@ using UnityEngine;
 public class Token : MonoBehaviour
 {
     private GameManager gameManager;
-    
+    public MeshRenderer mr;
     // Start is called before the first frame update
     void Start()
     {
