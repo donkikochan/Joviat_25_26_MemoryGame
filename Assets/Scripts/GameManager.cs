@@ -68,7 +68,11 @@ public class GameManager : MonoBehaviour
         }
         
 
+        //si hem obert dos tokens aleshores posar timer en marxa:
+        
        
         
     }
+    
+    
 }
