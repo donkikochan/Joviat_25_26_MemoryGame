@@ -167,9 +167,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToken: {fileID: 5181578067889581623, guid: ac1188f082c41499bbe0d00dd4861f9f, type: 3}
-  rows: 4
-  cols: 4
+  rows: 3
+  cols: 2
   spacing: 2
+  materials:
+  - {fileID: 2100000, guid: 8f35fa0f346794d289ca3945eafd52f7, type: 2}
+  - {fileID: 2100000, guid: 840523d1367b444f795f128509a49513, type: 2}
+  - {fileID: 2100000, guid: 3ebb7e7d36d354b3fa3e7b04d88e8d6e, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

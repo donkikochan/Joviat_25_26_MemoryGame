@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[,] tokens; // Array 2D para guardar los tokens
 
-
+    public Material[] materials;
+    
     private int numTokensOpened;
     private string token1Name;
     private string token2Name;
