@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
         // Coordenada inicial (puedes ajustarla según tu escena)
         Vector3 startPos = new Vector3(-((cols - 1) * spacing) / 2, 0, ((rows - 1) * spacing) / 2 );
-
+        int indexM = 0;
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
                 Vector3 pos = startPos + new Vector3(j * spacing * 1.25f, 0, -i * spacing );
                 GameObject o = Instantiate(prefabToken, pos, Quaternion.identity);
                 o.name = $"Token_{i}_{j}";
+                o.GetComponent<Token>().mr.material = materials[indexM];
+                indexM = (indexM + 1) % materials.Length; 
                 tokens[i, j] = o;
             }
         }
