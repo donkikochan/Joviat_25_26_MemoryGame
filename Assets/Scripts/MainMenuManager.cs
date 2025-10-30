@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI label;
     [SerializeField] private TextMeshProUGUI labelBtn;
+    [SerializeField] private AudioClip audioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,11 @@ public class MainMenuManager : MonoBehaviour
     public void onClickButton()
     {
         Debug.Log("Hola món");
-        SceneManager.LoadScene("GameScene");
+        //SceneManager.LoadScene("GameScene");
+        AudioSource source = GetComponent<AudioSource>();
+        source.PlayOneShot(audioClip);
+        
+
     }
 
     public void onValueChange(string value)
